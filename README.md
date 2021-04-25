@@ -88,3 +88,13 @@
    原项目链接：https://github.com/Lemon-XQ/human_model_viewer
 
    新增功能：参数提取，添加背景，自动加载和保存、部分汉化等
+   
+8. GUI
+
+   <img src="README.assets/1.PNG" alt="1" style="zoom:67%;" />
+
+   <img src="README.assets/2.PNG" alt="2" style="zoom:67%;" />
+
+   <img src="README.assets/3.PNG" alt="3" style="zoom:67%;" />
+
+   <img src="README.assets/7.PNG" alt="7" style="zoom:67%;" />
