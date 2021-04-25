@@ -5,7 +5,7 @@
 
 2. 环境配置
 
-   - 项目下载：`git clone https://github.com/wmj142326/SMPL3`
+   - 项目下载：`git clone https://github.com/wmj142326/SMPL_Tools`
 
    - 相关库安装：（**以下库建议后缀清华源安装**）
 
