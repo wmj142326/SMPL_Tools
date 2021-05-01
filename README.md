@@ -14,6 +14,7 @@
      pip install scipy
      pip install chumpy
      pip install opendr==0.73 -i https://pypi.tuna.tsinghua.edu.cn/simple
+     # opendr其他版本会提示关于“initGL"的报错。
      ```
 
    ​				   opendr安装如果失败，参考下面两种方法：
