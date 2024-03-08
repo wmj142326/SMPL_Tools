@@ -49,7 +49,9 @@ English | [简体中文](README_CN.md)
      
     - Baidu web disk package download:
    
-      Link：https://pan.baidu.com/s/1wE-xa1DRreZ0uwKkbuXGxA
+      Link：https://pan.baidu.com/s/1Y0Hm5i7farPl98w926xLhQ?pwd=o6uv 
+      
+      Password：o6uv
 
 4. Run：
 

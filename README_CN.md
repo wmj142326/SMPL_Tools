@@ -48,7 +48,9 @@
      
     - 百度网盘打包下载:
    
-      链接：https://pan.baidu.com/s/1wE-xa1DRreZ0uwKkbuXGxA 
+      链接：https://pan.baidu.com/s/1Y0Hm5i7farPl98w926xLhQ?pwd=o6uv 
+      
+      提取码：o6uv
 
 4. 运行：
 
