@@ -13,7 +13,8 @@ from .gen.main_window import Ui_MainWindow as Ui_MainWindow_Base
 from .camera_widget import Ui_CameraWidget
 from .util import *
 
-model_type_list = ['smpl','smplx','flame']
+model_type_list = ['smpl', 'smplx', 'flame']
+
 
 class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
     def __init__(self):
@@ -30,13 +31,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
         self.frustum = {'near': 0.1, 'far': 1000., 'width': 100, 'height': 30}
         self.light = LambertianPointLight(vc=np.array([0.98, 0.98, 0.98]), light_color=np.array([1., 1., 1.]))
         # self.rn = ColoredRenderer(bgcolor=np.ones(3), frustum=self.frustum, camera=self.camera, vc=self.light,
-                                  # overdraw=False)
+        # overdraw=False)
         self.rn = ColoredRenderer()
-        self.rn.set(glMode='glfw',bgcolor=np.ones(3), frustum=self.frustum, camera=self.camera, vc=self.light,
-                                  overdraw=False)
+        self.rn.set(glMode='glfw', bgcolor=np.ones(3), frustum=self.frustum, camera=self.camera, vc=self.light,
+                    overdraw=False)
         self.rn.overdraw = True
         self.rn.nsamples = 8
-        self.rn.msaa = True  #Without anti-aliasing optimization often does not work.
+        self.rn.msaa = True  # Without anti-aliasing optimization often does not work.
         self.rn.initGL()
         self.rn.debug = False
 
@@ -122,7 +123,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
                 back = letterbox_image(orig_back, (h, w))
                 back.resize(w, h, c)
                 back = back / 255
-                pic_rate = self.pic_w.value()/10
+                pic_rate = self.pic_w.value() / 10
                 back_rate = 1.0 - pic_rate
                 img = np.array(cv2.addWeighted(self.rn.r, pic_rate, back, back_rate, 5))
 
@@ -148,12 +149,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
 
         if self.view_joints.isChecked():
             for j in self.joints2d.r:
-                jj = height-j[1] # for opengl: flipx
+                jj = height - j[1]  # for opengl: flipx
                 cv2.circle(img, (int(j[0]), int(jj)), 5, (0.38, 0.68, 0.15), -1)
 
         if self.view_joint_ids.isChecked():
             for k, j in enumerate(self.joints2d.r):
-                jj = height-j[1]
+                jj = height - j[1]
                 cv2.putText(img, str(k), (int(j[0]), int(jj)), cv2.FONT_HERSHEY_DUPLEX, 0.6, (0.3, 0.23, 0.9), 2)
 
         return img
@@ -168,11 +169,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
             betas = self.model.betas.r
             trans = self.model.trans.r
 
-        if gender == None: 
+        if gender == None:
             gender = self.model_gender
         else:
             self.model_gender = gender
-        
+
         self.model = load_model(model_type=self.model_type, gender=self.model_gender)
         # print(self.model.r)
 
@@ -210,16 +211,16 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
             self.light.set(light_pos=Rodrigues(self.camera.rt).T.dot(self.camera.t) * -10.)
             self.rn.set(frustum=self.frustum, camera=self.camera)
             flipXRotation = np.array([[1.0, 0.0, 0.0, 0.0],
-                [0.0, -1.0, 0., 0.0],
-                [0.0, 0., -1.0, 0.0],
-                [0.0, 0.0, 0.0, 1.0]])
-            self.rn.camera.openglMat = flipXRotation #this is from setupcamera in utils
+                                      [0.0, -1.0, 0., 0.0],
+                                      [0.0, 0., -1.0, 0.0],
+                                      [0.0, 0.0, 0.0, 1.0]])
+            self.rn.camera.openglMat = flipXRotation  # this is from setupcamera in utils
             self.rn.glMode = 'glfw'
             self.rn.sharedWin = None
             self.rn.overdraw = True
             self.rn.nsamples = 8
-            self.rn.msaa = True  #Without anti-aliasing optimization often does not work.
-            self.rn.initGL()           
+            self.rn.msaa = True  # Without anti-aliasing optimization often does not work.
+            self.rn.initGL()
             self.rn.debug = False
 
             # print(self.rn.r)
@@ -251,7 +252,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
     def _open_config_dialog(self):
         # filename, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Load config', "../spin/ini_file/", 'Config File (*.ini)')
         ini_folder_name = '../spin/ini_file'
-        ini_files = os.listdir(ini_folder_name)  # 返回指定路径下的文件和文件夹列表
+        ini_files = os.listdir(ini_folder_name)  # Returns a list of files and folders in the specified path
         ini_id = self.frame_id.value()
         filename_id = ini_files[ini_id]
         if filename_id:
@@ -297,7 +298,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
             self.draw()
 
     def _save_screenshot_dialog(self):
-        filename, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save screenshot', "../spin/out_pic/%s" % self.back_name.toPlainText(), 'Images (*.png *.jpg *.ppm)')
+        filename, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save screenshot',
+                                                            "../spin/out_pic/%s" % self.back_name.toPlainText(),
+                                                            'Images (*.png *.jpg *.ppm)')
         if filename:
             img = np.array(self.rn.r)
             if self.view_joints.isChecked() or self.view_joint_ids.isChecked() or self.view_bones.isChecked():
@@ -305,7 +308,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
             cv2.imwrite(str(filename), np.uint8(img * 255))
 
     def _save_mesh_dialog(self):
-        filename, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save mesh', "../spin/out_mesh/%s" % self.back_name.toPlainText(), 'Mesh (*.obj)')
+        filename, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save mesh',
+                                                            "../spin/out_mesh/%s" % self.back_name.toPlainText(),
+                                                            'Mesh (*.obj)')
         if filename:
             with open(filename, 'w') as fp:
                 for v in self.model.r:
@@ -319,9 +324,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
         self.camera_widget.pos_2.setValue(self.camera_widget.pos_2.value() + delta)
 
     def _mouse_begin(self, event):
-        if event.button() == 4: # middle
+        if event.button() == 4:  # middle
             self._moving = True
-        elif event.button() == 1: # left
+        elif event.button() == 1:  # left
             self._rotating = True
         self._mouse_begin_pos = event.pos()
 
@@ -354,8 +359,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
 
         self.light = LambertianPointLight(vc=np.array([0.98, 0.98, 0.98]), light_color=np.array([1., 1., 1.]))
 
-        self.rn.set(glMode='glfw',bgcolor=np.ones(3), frustum=self.frustum, camera=self.camera, vc=self.light,
-                                  overdraw=False)
+        self.rn.set(glMode='glfw', bgcolor=np.ones(3), frustum=self.frustum, camera=self.camera, vc=self.light,
+                    overdraw=False)
 
         self._init_model()
         self.model.pose[0] = np.pi
@@ -379,10 +384,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
     def _update_exp(self, id, val):
         # val = (val - 50) / 50.0 * 5.0
         val = (val - 50000) / 50000.0 * 5.0
-        if self.model_type=='smplx':
+        if self.model_type == 'smplx':
             self.model.betas[10 + id] = val
             self.draw()
-        elif self.model_type=='flame':
+        elif self.model_type == 'flame':
             self.model.betas[10 + id] = val
             self.draw()
 
@@ -411,7 +416,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
         # if id == 0:              # 姿态朝向
         #     val += np.pi
 
-        if self.model_type == 'flame' and id>=5*3:
+        if self.model_type == 'flame' and id >= 5 * 3:
             return
 
         self.model.pose[id] = val
@@ -564,7 +569,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
         return first_pkl_name
 
     def _save_config_dialog_2(self):
-        filename, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save config', "../spin/ini_file/%s.ini" % self.back_name.toPlainText(), 'Config File (*.ini)')
+        filename, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save config',
+                                                            "../spin/ini_file/%s.ini" % self.back_name.toPlainText(),
+                                                            'Config File (*.ini)')
         if filename:
             with open(str(filename), 'w') as fp:
                 config = configparser.ConfigParser()
@@ -585,7 +592,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
                 config.write(fp)
 
     def _open_config_dialog_2(self):
-        filename, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Load config', "../spin/ini_file/", 'Config File (*.ini)')
+        filename, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Load config', "../spin/ini_file/",
+                                                            'Config File (*.ini)')
         if filename:
             fil = filename.split("/")[-1].split(".")[0]
             self.back_name.setPlainText(fil)
@@ -631,7 +639,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow, Ui_MainWindow_Base):
             self.draw()
 
 
-# 缩放
 def letterbox_image(img, input_dim):
     """
     resize image with unchanged aspect ratio using padding
@@ -662,7 +669,3 @@ def letterbox_image(img, input_dim):
     canvas[start_h:start_h + new_h, start_w:start_w + new_w, :] = resized_image
 
     return canvas
-
-
-
-
