@@ -90,7 +90,7 @@ English | [简体中文](README_CN.md)
    
 7. Reference：
 
-   Original project link：https://github.com/Lemon-XQ/human_model_viewer
+   Original project link：[human_model_viewer](https://github.com/Lemon-XQ/human_model_viewer).
 
    Added functions: parameter extraction, adding background, automatic loading and saving, partial Chinese, etc
    

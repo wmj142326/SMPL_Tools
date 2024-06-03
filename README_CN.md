@@ -90,7 +90,7 @@
    
 7. 参考：
 
-   原项目链接：https://github.com/Lemon-XQ/human_model_viewer
+   原项目链接：[human_model_viewer](https://github.com/Lemon-XQ/human_model_viewer).
 
    新增功能：参数提取，添加背景，自动加载和保存、部分汉化等
    
