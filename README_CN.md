@@ -46,11 +46,7 @@
    
      flame: http://flame.is.tue.mpg.de
      
-    - 百度网盘打包下载:
-   
-      链接：https://pan.baidu.com/s/1Y0Hm5i7farPl98w926xLhQ?pwd=o6uv 
-      
-      提取码：o6uv
+    - 百度网盘打包下载: 匿名
 
 4. 运行：
 
@@ -96,10 +92,15 @@
    
 8. GUI
 
-   <img src="README.assets/1.PNG" alt="1" style="zoom:67%;" />
+<table>
+  <tr>
+    <td>ann_before</td>
+    <td>ann_after</td>
+  </tr>
+  <tr>
+    <td><img src="README.assets/ann_before.png" alt="1" width="380"/></td>
+    <td><img src="README.assets/ann_after.png" alt="2" width="380"/></td>
+  </tr>
+</table>
 
-   <img src="README.assets/2.PNG" alt="2" style="zoom:67%;" />
-
-   <img src="README.assets/3.PNG" alt="3" style="zoom:67%;" />
-
-   <img src="README.assets/7.PNG" alt="7" style="zoom:67%;" />
+我们的论文正在经历双盲审查，论文发表后将公布所有链接。

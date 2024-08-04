@@ -47,11 +47,7 @@ English | [简体中文](README_CN.md)
    
      flame: http://flame.is.tue.mpg.de
      
-    - Baidu web disk package download:
-   
-      Link：https://pan.baidu.com/s/1Y0Hm5i7farPl98w926xLhQ?pwd=o6uv 
-      
-      Password：o6uv
+    - Baidu web disk package download: Anonymous
 
 4. Run：
 
@@ -96,10 +92,15 @@ English | [简体中文](README_CN.md)
    
 8. GUI
 
-   <img src="README.assets/1.PNG" alt="1" style="zoom:67%;" />
+<table>
+  <tr>
+    <td>ann_before</td>
+    <td>ann_after</td>
+  </tr>
+  <tr>
+    <td><img src="README.assets/ann_before.png" alt="1" width="380"/></td>
+    <td><img src="README.assets/ann_after.png" alt="2" width="380"/></td>
+  </tr>
+</table>
 
-   <img src="README.assets/2.PNG" alt="2" style="zoom:67%;" />
-
-   <img src="README.assets/3.PNG" alt="3" style="zoom:67%;" />
-
-   <img src="README.assets/7.PNG" alt="7" style="zoom:67%;" />
+Our paper is undergoing a double-blind review and all links will be published after publication.
