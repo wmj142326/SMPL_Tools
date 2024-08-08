@@ -1,4 +1,4 @@
-# SMPL-Tools  
+# 👣 SMPL-Tools  
 
 [English](README.md) | 简体中文
 
