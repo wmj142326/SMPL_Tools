@@ -47,7 +47,7 @@ English | [简体中文](README_CN.md)
    
      flame: http://flame.is.tue.mpg.de
      
-    - Baidu web disk package download: Anonymous
+    - Baidu web disk package download: [models.tar.gz](https://pan.baidu.com/s/1REDLMB3naBrEM3mcZbaZYQ?pwd=2024)
 
 4. Run：
 
@@ -103,4 +103,4 @@ English | [简体中文](README_CN.md)
   </tr>
 </table>
 
-Our paper is undergoing a double-blind review and all links will be published after publication.
+🎉 Our paper has been accepted by NeurIPS 2024!

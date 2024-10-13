@@ -46,7 +46,8 @@
    
      flame: http://flame.is.tue.mpg.de
      
-    - 百度网盘打包下载: 匿名
+    - 百度网盘打包下载: [models.tar.gz](https://pan.baidu.com/s/1REDLMB3naBrEM3mcZbaZYQ?pwd=2024)
+
 
 4. 运行：
 
@@ -103,4 +104,4 @@
   </tr>
 </table>
 
-我们的论文正在经历双盲审查，论文发表后将公布所有链接。
+🎉 我们的论文已经被NeurIPS 2024接受！
