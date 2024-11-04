@@ -1,8 +1,8 @@
-# 👣 SMPL-Tools  
+# 👣 SMPL Annotation Tools
 
 English | [简体中文](README_CN.md)
 
-# SMPL Visual Annotation Tool
+---
 
 1. System environment
    - ubuntu16.04 + python3.6  (windows10 + python3.6)
@@ -102,5 +102,9 @@ English | [简体中文](README_CN.md)
     <td><img src="README.assets/ann_after.png" alt="2" width="380"/></td>
   </tr>
 </table>
+
+9. Video
+
+- A detailed annotation process can be downloaded or viewed [here](https://github.com/wmj142326/SMPL_Annotation_Tools/blob/main/README.assets/smpl_tools_tutor.mp4).
 
 🎉 Our paper has been accepted by NeurIPS 2024!
