@@ -1,6 +1,9 @@
-# 👣 SMPL Annotation Tools  
+# 👣 SMPL Annotation Tools   
 
 [English](README.md) | 简体中文
+
+---
+
 
 # SMPL可视化标注工具
 
