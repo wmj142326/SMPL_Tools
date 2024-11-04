@@ -5,8 +5,6 @@
 ---
 
 
-# SMPL可视化标注工具
-
 1. 系统环境：ubuntu16.04 + python3.6  (windows10 + python3.6)
 
 2. 虚拟环境
