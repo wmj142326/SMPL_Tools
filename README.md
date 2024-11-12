@@ -107,4 +107,11 @@ English | [简体中文](README_CN.md)
 
 - A detailed annotation process can be downloaded or viewed [here](https://github.com/wmj142326/SMPL_Annotation_Tools/blob/main/README.assets/smpl_tools_tutor.mp4).
 
-🎉 Our paper has been accepted by NeurIPS 2024!
+### Citation
+   ```
+@inproceedings{wangpedestrian,
+  title={Pedestrian-Centric 3D Pre-collision Pose and Shape Estimation from Dashcam Perspective},
+  author={Wang, MeiJun and Meng, Yu and Qiu, Zhongwei and Zheng, Chao and Xu, Yan and Gao, Jian and others},
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
+}
+   ```

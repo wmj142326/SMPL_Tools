@@ -109,4 +109,11 @@
 
 可以从[这里](https://github.com/wmj142326/SMPL_Tools/blob/main/README.assets/smpl_tools_tutor.mp4)下载或观看详细的标注过程。
 
-🎉 我们的论文已经被NeurIPS 2024接受！
+### Citation
+   ```
+@inproceedings{wangpedestrian,
+  title={Pedestrian-Centric 3D Pre-collision Pose and Shape Estimation from Dashcam Perspective},
+  author={Wang, MeiJun and Meng, Yu and Qiu, Zhongwei and Zheng, Chao and Xu, Yan and Gao, Jian and others},
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
+}
+   ```
